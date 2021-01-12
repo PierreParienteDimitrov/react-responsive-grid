@@ -1,25 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Hero } from './Components/Hero';
+import { IsMobile } from './Utils/MediaQueries';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const isMobile = IsMobile();
+
+	return (
+		<Hero
+			url={'https://picsum.photos/200/300'}
+			height={'80vh'}
+			desktopWidth={'70%'}
+			mobileWidth={'90%'}
+			img={'https://picsum.photos/200'}
+			isMobile={isMobile}
+		/>
+	);
 }
 
 export default App;
