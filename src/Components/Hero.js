@@ -34,13 +34,13 @@ export const Hero = ({
 						  }
 				}
 			>
-				<article>
+				<article style={isMobile ? { order: '2' } : { order: '1' }}>
 					<h1>This is the title</h1>
 					<h4>{isMobile}</h4>
 					<button>This is the CTA</button>
 				</article>
 
-				<article>
+				<article style={isMobile ? { order: '1' } : { order: '2' }}>
 					<img src={`${img}`} alt='' />
 				</article>
 			</section>
