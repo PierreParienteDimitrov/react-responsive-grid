@@ -1,13 +1,30 @@
 import React from 'react';
+import { useBreakpoint } from '../Context/BreakpointsContext';
 
 export const Hero = ({
 	url,
 	height,
-	desktopWidth,
-	mobileWidth,
+	xsWidth,
+	smWidth,
+	mdWidth,
+	lgWidth,
 	img,
-	isMobile,
 }) => {
+	const breakpoints = useBreakpoint();
+	console.log(breakpoints);
+
+	const breakpointWidth = () => {
+		if (breakpoints.xs) {
+			return xsWidth;
+		} else if (breakpoints.sm) {
+			return smWidth;
+		} else if (breakpoints.md) {
+			return mdWidth;
+		} else if (breakpoints.lg) {
+			return lgWidth;
+		}
+	};
+
 	return (
 		<header
 			style={{
@@ -20,27 +37,21 @@ export const Hero = ({
 			}}
 		>
 			<section
-				style={
-					isMobile
-						? {
-								width: `${mobileWidth}`,
-						  }
-						: {
-								height: '100%',
-								display: 'grid',
-								width: `${desktopWidth}`,
-								alignItems: 'center',
-								gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-						  }
-				}
+				style={{
+					height: '100%',
+					display: 'grid',
+					width: `${breakpointWidth()}`,
+					alignItems: 'center',
+					gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+				}}
 			>
-				<article style={isMobile ? { order: '2' } : { order: '1' }}>
-					<h1>This is the title</h1>
-					<h4>{isMobile}</h4>
+				<article style={breakpoints.sm ? { order: '2' } : { order: '1' }}>
+					<h1>This is the title cool</h1>
+					<h4>{breakpoints.sm}</h4>
 					<button>This is the CTA</button>
 				</article>
 
-				<article style={isMobile ? { order: '1' } : { order: '2' }}>
+				<article style={breakpoints.sm ? { order: '1' } : { order: '2' }}>
 					<img src={`${img}`} alt='' />
 				</article>
 			</section>
