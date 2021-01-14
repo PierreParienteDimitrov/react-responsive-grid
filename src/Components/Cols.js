@@ -29,22 +29,24 @@ export const Cols = ({ xsPadding, smPadding, mdPadding, lgPadding }) => {
 				textAlign: 'center',
 			}}
 		>
-			<article
-				style={{
-					display: 'flex',
-					justifyContent: 'center',
-				}}
-			>
-				<h1>Column 1</h1>
+			<article style={{ width: '100%' }}>
+				<h1>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Deserunt, error!
+				</h1>
 			</article>
 			<article>
-				<h1>Column 2</h1>
+				<h1>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi odit
+					laudantium temporibus modi rerum vero facilis deleniti dicta id ab.
+				</h1>
 			</article>
 			<article>
-				<h1>Column 3</h1>
+				<h1>Lorem ipsum dolor sit.</h1>
 			</article>
 			<article>
-				<h1>Column 4</h1>
+				<h1>
+					Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae, odio?
+				</h1>
 			</article>
 		</section>
 	);

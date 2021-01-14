@@ -15,11 +15,12 @@ function App() {
 				lgWidth={'70%'}
 				img={'https://picsum.photos/200'}
 			/>
+
 			<Cols
-				xsPadding={'1rem'}
-				smPadding={'1rem'}
+				xsPadding={'2rem'}
+				smPadding={'5rem'}
 				mdPadding={'2rem'}
-				lgPadding={'4rem'}
+				lgPadding={'6rem'}
 			/>
 		</>
 	);
